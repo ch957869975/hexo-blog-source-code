@@ -13,8 +13,8 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://ch957869975.github.io/hexo-blog/
-root: /hexo-blog/
+url: https://ch957869975.github.io/
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -79,7 +79,7 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:ch957869975/hexo-blog.git
+  repo: git@github.com:ch957869975/ch957869975.github.io.git
   branch: master
 
 live2d:

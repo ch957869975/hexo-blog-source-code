@@ -409,8 +409,8 @@ gitment:
   language: zh-Hans # Force language, or auto switch by theme
   github_user: ch957869975 # MUST HAVE, Your Github ID
   github_repo: hexo-blog # MUST HAVE, The repo you use to store Gitment comments
-  client_id: dc8af2b067fe7cefb2ee # MUST HAVE, Github client id for the Gitment
-  client_secret: eebae626fd2141ad0bf000b83400f40fdbf7f9f8 # EITHER this or proxy_gateway, Github access secret token for the Gitment
+  client_id: 9437e614335121f463ea # MUST HAVE, Github client id for the Gitment
+  client_secret: da6cca93c9cb5276024764856c90767392beb9aa # EITHER this or proxy_gateway, Github access secret token for the Gitment
   proxy_gateway: # Address of api proxy, See: https://github.com/aimingoo/intersect
   redirect_protocol: # Protocol of redirect_uri with force_redirect_protocol when mint enabled
 
