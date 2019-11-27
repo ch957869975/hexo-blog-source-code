@@ -4,12 +4,12 @@ date: 2019-02-06 17:47:51
 tags:
   - JavaScript
   - ES6
-categories:
-  - JavaScript
 ---
 
 为了梳理知识点，写一下 8102 年的箭头函数  
 (ps:我写分号了，不过被我配置的 ide 的格式规则给抹平了)
+
+<!--more-->
 
 ## 基本用法
 
@@ -66,7 +66,7 @@ but，箭头函数没有这个构造器，所以 new 时会抛出一个错误
 
 ```js
 // 传入元素 id 值即可绑定该元素点击时改变背景色的事件
-new Button('button')
+new Button("button")
 ```
 
 ```html
@@ -77,19 +77,19 @@ js 是下面这样的
 
 ```js
 function Button(id) {
-  this.element = document.querySelector('#' + id)
+  this.element = document.querySelector("#" + id)
   this.bindEvent()
 }
 
 Button.prototype.bindEvent = function() {
-  this.element.addEventListener('click', this.setBgColor, false)
+  this.element.addEventListener("click", this.setBgColor, false)
 }
 
 Button.prototype.setBgColor = function() {
-  this.element.style.backgroundColor = '#1abc9c'
+  this.element.style.backgroundColor = "#1abc9c"
 }
 
-var button = new Button('button')
+var button = new Button("button")
 ```
 
 看着好像没有问题，结果却是报错 <font color="red">Uncaught TypeError: Cannot read property 'style' of undefined</font>
@@ -102,7 +102,7 @@ var button = new Button('button')
 
 ```js
 Button.prototype.setBgColor = function() {
-  this.style.backgroundColor = '#1abc9c'
+  this.style.backgroundColor = "#1abc9c"
 }
 ```
 
@@ -123,7 +123,7 @@ Button.prototype.setBgColor = function() {
 
 ```js
 Button.prototype.bindEvent = function() {
-  this.element.addEventListener('click', this.setBgColor.bind(this), false)
+  this.element.addEventListener("click", this.setBgColor.bind(this), false)
 }
 ```
 
@@ -133,7 +133,7 @@ Button.prototype.bindEvent = function() {
 
 ```js
 Button.prototype.bindEvent = function() {
-  this.element.addEventListener('click', event => this.setBgColor(event), false)
+  this.element.addEventListener("click", event => this.setBgColor(event), false)
 }
 ```
 

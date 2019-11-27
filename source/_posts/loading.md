@@ -3,8 +3,6 @@ title: 两款简洁的 loading 动画
 date: 2019-02-06 17:29:51
 tags:
   - css
-categories:
-  - css
 ---
 
 ## HTML

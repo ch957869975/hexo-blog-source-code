@@ -4,8 +4,6 @@ date: 2019-02-08 11:45:49
 tags:
   - css
   - 图形
-categories:
-  - css
 ---
 
 听说你想要钻石 💎？买不起，还是用 css 来画一个吧，但你敢送给自己女朋友，不保证不被打。
@@ -22,6 +20,8 @@ categories:
 # 知识点
 
 这个 demo 中涉及到了 css3 的 `transform`, css 画三角形 以及 **如何给 css 画出的三角形加边框**，三角形的边框构成了钻石的棱角（白色的线条），预处理语言使用的是`less`。
+
+<!--more-->
 
 **三角形的边框**：我们知道，三角形本来就是用`border`画的，给三角形加边框相当于给`border`加`border`,这个做法肯定行不通。我是这样做的：画 2 个三角形，一个大的一个小的，小的比大的小`1px`,然后小的盖在大的上面，这样大三角形就只漏出`1px`,视觉效果就是成为了内部小三角形的边框线了。[参考博文](https://www.cnblogs.com/blosaa/p/3823695.html)
 
@@ -70,7 +70,7 @@ categories:
     border-style: solid; // 元素本身做大三角形，衬底成为小三角形的边框
     &:after {
       // 伪元素定义小三角形
-      content: '';
+      content: "";
       position: absolute;
       border-style: solid;
     }

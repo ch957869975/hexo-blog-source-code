@@ -4,8 +4,6 @@ date: 2019-02-06 17:48:58
 tags:
   - JavaScript
   - ES6
-categories:
-  - JavaScript
 ---
 
 # 浅析 let 与 const
@@ -33,6 +31,8 @@ for(var i = 0; i < 10; i++) {
 }
 console.log(i) // 10
 ```
+
+<!--more-->
 
 我们知道,即使循环结束了我们仍然可以访问到`i`,此时控制台打印的是 10，为了解决这个问题，ES6 引入了块级作用域。
 

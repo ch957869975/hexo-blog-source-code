@@ -4,8 +4,6 @@ date: 2019-02-06 17:49:13
 tags:
   - JavaScript
   - 面试题
-categories:
-  - JavaScript
 ---
 
 给出如下虚拟 dom 的数据结构，如何实现简单的虚拟 dom，渲染到目标 dom 节点数
@@ -16,9 +14,14 @@ categories:
 
   "props": { "class": "list" },
 
-  "children": [{ "tagName": "li", "children": ["douyin"] }, { "tagName": "li", "children": ["toutiao"] }]
+  "children": [
+    { "tagName": "li", "children": ["douyin"] },
+    { "tagName": "li", "children": ["toutiao"] }
+  ]
 }
 ```
+
+<!--more-->
 
 构建一个 render 函数，将 demoNode 对象渲染为以下 dom
 
@@ -62,9 +65,12 @@ function Element({ tagName, props, children }) {
 
 ```js
 var elem = Element({
-  tagName: 'ul',
-  props: { class: 'list' },
-  children: [Element({ tagName: 'li', children: ['douyin'] }), Element({ tagName: 'li', children: ['toutiao'] })]
+  tagName: "ul",
+  props: { class: "list" },
+  children: [
+    Element({ tagName: "li", children: ["douyin"] }),
+    Element({ tagName: "li", children: ["toutiao"] })
+  ]
 })
 ```
 
@@ -97,11 +103,14 @@ Element.prototype.render = function() {
 
 ```js
 var elem = Element({
-  tagName: 'ul',
-  props: { class: 'list' },
-  children: [Element({ tagName: 'li', children: ['douyin'] }), Element({ tagName: 'li', children: ['toutiao'] })]
+  tagName: "ul",
+  props: { class: "list" },
+  children: [
+    Element({ tagName: "li", children: ["douyin"] }),
+    Element({ tagName: "li", children: ["toutiao"] })
+  ]
 })
-document.querySelector('body').appendChild(elem.render())
+document.querySelector("body").appendChild(elem.render())
 ```
 
 晚安, 🌛

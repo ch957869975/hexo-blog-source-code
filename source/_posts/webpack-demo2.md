@@ -3,8 +3,6 @@ title: 【webpack学习之路】2. 配置加载css/图片/字体
 date: 2019-02-06 14:14:55
 tags:
   - webpack
-categories:
-  - webpack
 ---
 
 # 加载 css，图片，字体 简单配置
@@ -24,24 +22,26 @@ npm i css-loader style-loader -D
 在`webpack.config.js`中配置 `loader`
 
 ```js
-const path = require('path')
+const path = require("path")
 
 module.exports = {
-  entry: './src/index.js',
+  entry: "./src/index.js",
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "dist")
   },
   module: {
     rules: [
       {
         test: /\.css$/, //使用正则表达式匹配某种类型的文件，这里配置的是后缀为css的文件
-        use: ['style-loader', 'css-loader'] //loader名称
+        use: ["style-loader", "css-loader"] //loader名称
       }
     ]
   }
 }
 ```
+
+<!--more-->
 
 配好之后，就可以在 js 中通过 import 导入你想加载的 css 文件了，在`src`下新建`style.css`
 
@@ -55,10 +55,10 @@ module.exports = {
 `index.html`与上一文章相同
 
 ```js
-import './style.css'
-const render = (tagname = 'div') => {
+import "./style.css"
+const render = (tagname = "div") => {
   const elem = document.createElement(tagname)
-  elem.innerHTML = 'Hello Webapck demo02!'
+  elem.innerHTML = "Hello Webapck demo02!"
   return elem
 }
 document.body.appendChild(render())
@@ -84,7 +84,7 @@ rules: [
   // ......
   {
     test: /\.(png|svg|jpg|gif)$/,
-    use: ['file-loader']
+    use: ["file-loader"]
   }
 ]
 ```
@@ -93,12 +93,12 @@ rules: [
 
 ```js
 // ...
-import picture from './heart.png'
+import picture from "./heart.png"
 
-const render = (tagname = 'div') => {
+const render = (tagname = "div") => {
   const elem = document.createElement(tagname)
-  elem.innerHTML = 'Hello Webapck demo02!'
-  elem.classList.add('hello')
+  elem.innerHTML = "Hello Webapck demo02!"
+  elem.classList.add("hello")
   const pic = new Image()
   pic.src = picture
   element.appendChild(pic)
@@ -120,7 +120,7 @@ document.body.appendChild(render())
   height: 300px;
   margin: 30px;
   font-size: 20px;
-  background-image: url('./heart.png');
+  background-image: url("./heart.png");
   background-size: 100%;
   background-repeat: no-repeat;
 }
@@ -141,7 +141,7 @@ rules: [
   // ...
   {
     test: /\.(png|svg|jpg|gif|woff|woff2|eot|ttf|otf|TTF)$/,
-    use: ['file-loader']
+    use: ["file-loader"]
   }
 ]
 ```
@@ -150,8 +150,8 @@ rules: [
 
 ```css
 @font-face {
-  font-family: 'MyFont';
-  src: url('./font.TTF') format('truetype');
+  font-family: "MyFont";
+  src: url("./font.TTF") format("truetype");
   font-weight: bold;
   font-style: normal;
 }

@@ -4,8 +4,6 @@ date: 2019-02-06 17:48:47
 tags:
   - JavaScript
   - 懒加载
-categories:
-  - JavaScript
 ---
 
 懒加载作为节约性能开支的优化项，已经必不可少。理所应当的成为前端必做工作之一。  
@@ -20,6 +18,8 @@ categories:
 一个问题，实际的 url 存在哪里？我们优先选择`data-*`自定义属性集，叫什么无所谓，你自己记住就好
 随便写下 dom 结构，只是为了做简易 demo，实际开发中结构要和设计相关联。
 
+<!--more-->
+
 ```html
 <div id="box">
   <img
@@ -30,8 +30,14 @@ categories:
     class="lazy"
     data-src="http://f.hiphotos.baidu.com/zhidao/pic/item/eac4b74543a982267a3d54978a82b9014b90eb86.jpg"
   />
-  <img class="lazy" data-src="http://pic1.win4000.com/wallpaper/2/58b61f7dc6c1d.jpg" />
-  <img class="lazy" data-src="http://file03.16sucai.com/2017/1100/16sucai_p20161106032_0c2.JPG" />
+  <img
+    class="lazy"
+    data-src="http://pic1.win4000.com/wallpaper/2/58b61f7dc6c1d.jpg"
+  />
+  <img
+    class="lazy"
+    data-src="http://file03.16sucai.com/2017/1100/16sucai_p20161106032_0c2.JPG"
+  />
   <img
     class="lazy"
     data-src="http://imgsrc.baidu.com/image/c0%3Dpixel_huitu%2C0%2C0%2C294%2C40/sign=5a7938d38acb39dbd5cd6f16b96e6c48/aec379310a55b3196c79de4c48a98226cffc1702.jpg"
@@ -61,7 +67,7 @@ body {
 
 .lazy {
   /*占位背景图*/
-  background: url('./img/loading.gif') no-repeat center;
+  background: url("./img/loading.gif") no-repeat center;
 }
 
 img {

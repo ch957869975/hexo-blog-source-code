@@ -3,8 +3,6 @@ title: 【webpack学习之路】1. 初步配置webpack
 date: 2019-02-06 12:32:13
 tags:
   - webpack
-categories:
-  - webpack
 ---
 
 # 开始前的准备
@@ -18,6 +16,8 @@ mkdir webpack-demo
 touch .gitingnore
 
 ```
+
+<!--more-->
 
 后续会在`webpack-demo`中创建多个 demo，每个 demo 单独成为一个小项目，所以`.gitignore`得把 demo 下的`node_moudules`忽略掉
 
@@ -90,9 +90,9 @@ ps: `package-lock.json` 不用过多关注
 对应的 js 就是
 
 ```javascript
-const render = (tagname = 'div') => {
+const render = (tagname = "div") => {
   const elem = document.createElement(tagname)
-  elem.innerHTML = 'Hello Webapck !'
+  elem.innerHTML = "Hello Webapck !"
   return elem
 }
 
@@ -106,13 +106,13 @@ document.body.appendChild(render())
 webpack.config.js
 
 ```js
-const path = require('path') //node自带的path模块
+const path = require("path") //node自带的path模块
 module.exports = {
-  entry: './src/index.js', //入口文件配置
+  entry: "./src/index.js", //入口文件配置
   output: {
     //出口文件配置
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "dist")
   }
 }
 ```

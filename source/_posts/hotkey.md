@@ -3,8 +3,6 @@ title: hotkey.js 的使用
 date: 2019-02-18 14:38:23
 tags:
   - JavaScript
-categories:
-  - JavaScript
 ---
 
 # hotkey.js 的使用
@@ -19,31 +17,33 @@ npm install hotkeys-js --save
 
 **注意**我们是要在线上仍然使用这个 js 库，所以并不是安装到开发依赖中。
 
+<!--more-->
+
 ---
 
 ## 用法
 
 ```js
-import hotkeys from 'hotkeys-js'
+import hotkeys from "hotkeys-js"
 
-hotkeys('f5', function(event, handler) {
+hotkeys("f5", function(event, handler) {
   // Prevent the default refresh event under WINDOWS system
   event.preventDefault()
-  alert('you pressed F5!')
+  alert("you pressed F5!")
 })
-hotkeys('ctrl+a,ctrl+b,r,f', function(event, handler) {
+hotkeys("ctrl+a,ctrl+b,r,f", function(event, handler) {
   switch (handler.key) {
-    case 'ctrl+a':
-      alert('you pressed ctrl+a!')
+    case "ctrl+a":
+      alert("you pressed ctrl+a!")
       break
-    case 'ctrl+b':
-      alert('you pressed ctrl+b!')
+    case "ctrl+b":
+      alert("you pressed ctrl+b!")
       break
-    case 'r':
-      alert('you pressed r!')
+    case "r":
+      alert("you pressed r!")
       break
-    case 'f':
-      alert('you pressed f!')
+    case "f":
+      alert("you pressed f!")
       break
   }
 })

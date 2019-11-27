@@ -4,8 +4,6 @@ date: 2019-02-16 15:17:33
 tags:
   - JavaScript
   - markdown
-categories:
-  - JavaScript
 ---
 
 涵盖了大多数 markdown 语法的快捷操作，实时编译实时预览，支持直接导出 md 格式文件，支持微博图床。纯前端实现，不必担心数据被后台存储。
@@ -28,7 +26,10 @@ categories:
 
 `markdown-it-mark` 标记功能  
  `markdown-it-emoji` emoji 表情解析  
-`highligh.js`代码高亮  
+`highligh.js`代码高亮
+
+<!--more-->
+
 `markdown-it-task-checkbox` 复选框功能  
 `markdown-it-footnote` 脚注功能
 
@@ -74,7 +75,7 @@ categories:
 ie 支持`document.selection`，而绝大多数浏览器支持`selectionStart` 与 `selectionEnd` 两个属性。利用这两个属性加上字符串的`substring`方法动态拼接起来。 **这里需要注意的是 用这个方法拼接起来的字符串，并没有触发对变量的双向绑定，所以我在这里手动触发了一下`textarea`的 input 事件，如下：**
 
 ```js
-document.querySelector('textarea').dispatchEvent(new Event('input'))
+document.querySelector("textarea").dispatchEvent(new Event("input"))
 ```
 
 ---
@@ -85,21 +86,21 @@ document.querySelector('textarea').dispatchEvent(new Event('input'))
 **代码如下：**
 
 ```js
-if (!this.editorContent || !window.localStorage.getItem('MarkdownDraft')) {
-  return this.$Notice.error({ title: '你还没有写内容' })
+if (!this.editorContent || !window.localStorage.getItem("MarkdownDraft")) {
+  return this.$Notice.error({ title: "你还没有写内容" })
 }
 const content = this.editorContent
-const elem = document.createElement('a')
-elem.download = 'draft.md'
-elem.style.display = 'none'
-const blob = new Blob([content], { type: 'text/plain' })
+const elem = document.createElement("a")
+elem.download = "draft.md"
+elem.style.display = "none"
+const blob = new Blob([content], { type: "text/plain" })
 elem.href = URL.createObjectURL(blob)
 document.body.appendChild(elem)
 elem.click()
 document.body.removeChild(elem)
 setTimeout(() => {
-  this.editorContent = ''
-  window.localStorage.removeItem('MarkdownDraft')
+  this.editorContent = ""
+  window.localStorage.removeItem("MarkdownDraft")
 }, 300)
 ```
 
@@ -124,7 +125,7 @@ setTimeout(() => {
 组件之间通信，因为偷懒，用了`bus.js`，实际代码就两行
 
 ```js
-import Vue from 'vue'
+import Vue from "vue"
 export default new Vue()
 ```
 

@@ -4,13 +4,13 @@ date: 2019-02-06 08:09:36
 tags:
   - css
   - 图形
-categories:
-  - css
 ---
 
 # 如何使用 css 绘制心形
 
 常遇到心形图案，比如点赞和取消点赞的使用场景。之前的使用方式是图片接入，作为`img` 或 `backgroundImage` 插入到 dom 中去。现在自己动手用 css 绘制一个心形图案。
+
+<!--more-->
 
 ## 心形
 
@@ -40,14 +40,14 @@ categories:
   position: absolute;
   left: 0;
   top: 0;
-  content: '';
+  content: "";
   width: 25px;
   height: 40px;
   background: red;
   border-radius: 20px 20px 0 0;
 }
 #heart:after {
-  content: '';
+  content: "";
   left: 25px;
   top: 0;
 }
@@ -64,7 +64,7 @@ emmm... 形状无法描述，上图吧还是...到现在为止的形状应该是
   position: absolute;
   left: 25px;
   top: 0;
-  content: '';
+  content: "";
   width: 25px;
   height: 40px;
   background: red;
@@ -73,7 +73,7 @@ emmm... 形状无法描述，上图吧还是...到现在为止的形状应该是
   transform-origin: 0 100%;
 }
 #heart:after {
-  content: '';
+  content: "";
   left: 0;
   top: 0;
   transform: rotate(45deg);

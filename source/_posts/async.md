@@ -3,12 +3,9 @@ title: 我们为什么需要async/await?
 date: 2019-03-26 9:00:26
 tags:
   - JavaScript
-categories:
-  - JavaScript
 ---
 
 ![](https://user-gold-cdn.xitu.io/2019/3/25/169b4d7c57ad2ba6?w=1270&h=642&f=png&s=61453)
-内有多只猫咪 ，慎入。
 
 ## async 是什么 & async 的基本用法
 
@@ -18,9 +15,11 @@ categories:
 js 的方法和语法糖多数都是语义化的，从字面意思上来说，async 代表`异步的`，用来表示一个异步的函数，返回一个`promise`,可以使用 then 方法添加回调。
 可以看下这个例子：
 
+<!--more-->
+
 ```js
 const foo = async () => {
-  return { name: '芬达' }
+  return { name: "芬达" }
 }
 console.log(foo())
 ```
@@ -49,7 +48,7 @@ const val = await promise
 const foo2 = async () => {
   const promise = new Promise((reslove, reject) => {
     setTimeout(() => {
-      reslove('芬达')
+      reslove("芬达")
     }, 1000)
   })
   const ret = await promise
@@ -99,9 +98,9 @@ emmmmm, 就是这样。
 初级前端的写法：
 
 ```js
-ajax('login', { username, password }, ({ userId }) => {
-  ajax('getToken', { userId }, ({ token }) => {
-    ajax('getOtherInfo', { token }, res => {
+ajax("login", { username, password }, ({ userId }) => {
+  ajax("getToken", { userId }, ({ token }) => {
+    ajax("getOtherInfo", { token }, res => {
       // do something...
     })
   })
@@ -111,9 +110,9 @@ ajax('login', { username, password }, ({ userId }) => {
 是不是头皮发麻，当然，如果你是写这样的代码的人，你可能觉得还可以接受，如果你是维护这样的代码的，你就会明白有多难维护，这里只写了三层，实际中甚至更多。意味着层级嵌套，牵一发而动全身，要改都得改的死胡同，意味着代码缩进都能恶心坏你，所以，初级大圆满前端是如何写的呢？
 
 ```js
-ajax('login', { username, password })
-  .then(({ userId }) => ajax('getToken', { userId }))
-  .then(({ token }) => ajax('getOtherInfo', { token }))
+ajax("login", { username, password })
+  .then(({ userId }) => ajax("getToken", { userId }))
+  .then(({ token }) => ajax("getOtherInfo", { token }))
   .then(res => {
     // do something...
   })
@@ -123,9 +122,9 @@ ajax('login', { username, password })
 
 ```js
 async function foo({ username, password }) {
-  const { userId } = await ajax('login', { username, password })
-  const { token } = await ajax('getToken', { userId })
-  const res = await ajax('getOtherInfo', { token })
+  const { userId } = await ajax("login", { username, password })
+  const { token } = await ajax("getToken", { userId })
+  const res = await ajax("getOtherInfo", { token })
   // do something ...
 }
 ```
@@ -161,9 +160,9 @@ async function foo({ username, password }) {
 
 ```js
 try {
-  const { userId } = await ajax('login', { username, password })
+  const { userId } = await ajax("login", { username, password })
 } catch {
-  throw new Error('no user found')
+  throw new Error("no user found")
 }
 ```
 
@@ -177,7 +176,7 @@ function util(promise) {
 }
 async function foo({ usernam, password }) {
   let userId, token, err
-  ;[err, { userId }] = await util(ajax('login', { username, password }))
+  ;[err, { userId }] = await util(ajax("login", { username, password }))
   // 因默认数据返回是对象，所以加了解构，部分省略...
   // do something
 }

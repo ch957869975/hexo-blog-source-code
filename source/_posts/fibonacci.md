@@ -4,8 +4,6 @@ date: 2019-02-06 17:48:27
 tags:
   - JavaScript
   - 面试题
-categories:
-  - JavaScript
 ---
 
 ps：斐波那契数列数列，[1,2,3,5,8,13,21...],从第三项开始，当前项是前两项的和的一组数
@@ -24,6 +22,8 @@ function fibonacci1(n) {
 // fibonacci1(50) = 20365011074
 // time = 140550.01586914062ms
 ```
+
+<!--more-->
 
 ok，代码没问题，打印一下吧，`console.log(fibonacci(100))`,发现打印不出来，计算太庞大了，简单 3 行的递归 function，竟然导致了浏览器崩溃，难以置信，但事实如此。
 
@@ -76,7 +76,11 @@ function fibonacci3(n) {
 ```js
 function fibonacci4(n) {
   const SQRT_FIVE = Math.sqrt(5)
-  return Math.round((1 / SQRT_FIVE) * (Math.pow(0.5 + SQRT_FIVE / 2, n + 1) - Math.pow(0.5 - SQRT_FIVE / 2, n + 1)))
+  return Math.round(
+    (1 / SQRT_FIVE) *
+      (Math.pow(0.5 + SQRT_FIVE / 2, n + 1) -
+        Math.pow(0.5 - SQRT_FIVE / 2, n + 1))
+  )
 }
 //fibonacci4(50) = 20365011074
 // time = 2.782958984375ms
