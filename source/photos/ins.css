@@ -36,6 +36,10 @@
 .instagram .thumb a {
   position: relative;
 }
+.instagram .thumb a img {
+  position: relative;
+  /* height: 25%; */
+}
 .instagram .album h1 em {
   font-style: normal;
   font-size: 14px;

@@ -107,16 +107,21 @@
           var data = res.list[j].arr;
           var liTmpl = "";
           for (var i = 0, len = data.link.length; i < len; i++) {
-            //gitee.com/fenda-tz/blog-pic/raw/master/photos/2019-9-14_%E6%99%B4%E7%A9%BA.jpg
+            var type = data.type[i] || "image";
+
             var minSrc =
               "https://gitee.com/fenda-tz/blog-pic/raw/master/min_photos/" +
               data.link[i];
+            if (type === "video") {
+              minSrc =
+                "https://gitee.com/fenda-tz/blog-pic/raw/master/min_photos/" +
+                data.link[i].split(".")[0] +
+                ".png";
+            }
             var src =
               "https://gitee.com/fenda-tz/blog-pic/raw/master/photos/" +
               data.link[i];
-            var type = data.type[i];
-            var target = src + (type === "video" ? ".mp4" : ".jpg");
-            // src += ".jpg";
+            var target = src;
 
             liTmpl +=
               '<figure class="thumb" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">\
@@ -400,6 +405,7 @@
             }
 
             if (linkEl.children.length > 0) {
+              console.log(11, item);
               item.msrc = linkEl.children[0].getAttribute("src");
               item.type = type;
               item.target = target;
