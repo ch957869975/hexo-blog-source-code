@@ -115,3 +115,11 @@ markdown:
     - markdown-it-sub
     - markdown-it-sup
     - markdown-it-emoji # add emoji
+    - name: markdown-it-container
+      options: success
+    - name: markdown-it-container
+      options: info
+    - name: markdown-it-container
+      options: warning
+    - name: markdown-it-container
+      options: danger
